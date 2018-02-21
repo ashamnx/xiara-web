@@ -6,7 +6,7 @@ var runSequence = require('run-sequence');
 var child = require('child_process');
 
 let options = process.argv.slice(3);
-options.unshift("./main.js");
+options.unshift("./index.js");
 
 
 // Manage Server Process

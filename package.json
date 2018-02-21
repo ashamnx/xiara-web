@@ -3,11 +3,11 @@
   "author": "Azarus",
   "description": "Web Server framework using Express.js for Xiara",
   "license": "MIT",
-  "main": "./build/main.js",
+  "main": "./build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "types": "./build/main.d.ts",
+  "types": "./build/index.d.ts",
   "version": "0.0.1",
   "dependencies": {
     "browserify": "^14.5.0",
