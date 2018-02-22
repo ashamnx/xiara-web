@@ -42,7 +42,7 @@ export function PATCH(path?: string, policies?: any[])
     return createRoute("PATCH", path, policies);
 }
 
-function createRoute(type, route, policies)
+function createRoute(type, route, policies?: any[])
 {
     return function(target: any, name: string)
     {
@@ -53,6 +53,7 @@ function createRoute(type, route, policies)
             method: type,// Request Method
             target: name, // Target Method
             path: route, // Required Route
+            policies: policies,
         });
     }
 }

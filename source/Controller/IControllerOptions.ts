@@ -15,6 +15,9 @@ export interface IControllerRouting
 
     // Child paths
     children?: IControllerRouting[];
+
+    // Policies To Use
+    policies?: any[];
 };
 
 export interface IControllerOptions extends IComponentOptions
@@ -28,6 +31,6 @@ export interface IControllerOptions extends IComponentOptions
     // Override routes for this controller
     routes?: IControllerRouting[];
 
-//    // Policies to apply to this controller
-  //  policies: IPolicy[];
+   // Policies to apply to this controller
+    policies?: any[];
 };

@@ -14,4 +14,10 @@ export interface IRouteDefinition
 
     // Child paths
     children?: IRouteDefinition[];
+
+    // Policies
+    policies?: any[];
+
+    // Middlewares
+    middlewares?: any[];
 };

@@ -29,18 +29,21 @@ export class XiaraWebApplication extends XiaraApplication
     protected initRoutes(AppModule)
     {
         let options = this.moduleManager.getModuleOptions<IWebModuleOptions>(AppModule);
-        this.webserver.bindRoutes((options.routes || []));
+        this.webserver.addRoutes((options.routes || []));
     }
     
     protected initControllers(AppModule)
     {
         let options = this.moduleManager.getModuleOptions<IWebModuleOptions>(AppModule);
-		this.Controllers = (options.controllers || []).map( ControllerObject => {
-            let controller = this.componentRegistry.create(ControllerObject);
-            let options = this.componentRegistry.getOptions<IControllerOptions>(ControllerObject);
-            this.webserver.useController(controller, options, ControllerObject);
-            return controller;
-        });
+		this.Controllers = (options.controllers || []).map( ControllerType => this.createController(ControllerType));
+    }
+
+    createController(ControllerType)
+    {
+        let controller = this.componentRegistry.create(ControllerType);
+        let options = this.componentRegistry.getOptions<IControllerOptions>(ControllerType);
+        this.webserver.useController(controller, options, ControllerType);
+        return controller;
     }
 
     getWebServer()
