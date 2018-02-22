@@ -1,15 +1,17 @@
 import { XiaraApplication } from "@xiara/core";
 import { WebModuleManager, IWebModuleOptions } from "./WebModule";
 import { WebServer } from "./Express";
+import { IControllerOptions } from "./Controller";
 //import { ControllerRegistry } from "./Controller";
 
 export class XiaraWebApplication extends XiaraApplication
 {
+    private webserver = new WebServer();
+    Controllers: any[] = [];
+
     constructor()
     {
         super();
-
-        this.createRouter();
     }
 
     protected createModuleManager()
@@ -17,34 +19,39 @@ export class XiaraWebApplication extends XiaraApplication
         this.moduleManager = new WebModuleManager(this);
     }
 
-    protected createRouter()
-    {
-        console.log("Creating a router?");
-    }
-
     protected initDependencies(AppModule)
     {
         super.initDependencies(AppModule);
         this.initControllers(AppModule);
+        this.initRoutes(AppModule);
     }
-
+    
+    protected initRoutes(AppModule)
+    {
+        let options = this.moduleManager.getModuleOptions<IWebModuleOptions>(AppModule);
+        this.webserver.bindRoutes((options.routes || []));
+    }
+    
     protected initControllers(AppModule)
     {
         let options = this.moduleManager.getModuleOptions<IWebModuleOptions>(AppModule);
-		(options.controllers || []).map( controller => {
-			this.componentRegistry.register(controller);
-		});
+		this.Controllers = (options.controllers || []).map( ControllerObject => {
+            let controller = this.componentRegistry.create(ControllerObject);
+            let options = this.componentRegistry.getOptions<IControllerOptions>(ControllerObject);
+            this.webserver.useController(controller, options, ControllerObject);
+            return controller;
+        });
     }
 
-    createWebServer()
+    getWebServer()
     {
-        let webserver = new WebServer();
-        webserver.registerMiddlewares();
-        webserver.registerPolicies();
-        webserver.registerRoutes();
-        webserver.registerCacheControl();
-        webserver.registerControllers();
-        webserver.registerResponses();
-        return webserver;
+        
+        //this.webserver.registerMiddlewares();
+        // webserver.registerPolicies();
+        // webserver.registerRoutes();
+        // webserver.registerCacheControl();
+        // webserver.registerControllers();
+        // webserver.registerResponses();
+        return this.webserver;
     }
 };

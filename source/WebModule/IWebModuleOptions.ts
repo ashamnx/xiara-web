@@ -1,4 +1,5 @@
 import { IModuleOptions } from "@xiara/core";
+import { IRouteDefinition } from "../Router";
 
 export interface IWebModuleOptions extends IModuleOptions
 {
@@ -6,4 +7,5 @@ export interface IWebModuleOptions extends IModuleOptions
     middlewares?: any[];
     policies?: any[];
     responses?: any[];
+    routes?: IRouteDefinition[];
 };
