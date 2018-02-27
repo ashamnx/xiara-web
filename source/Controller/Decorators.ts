@@ -6,7 +6,7 @@ export function Controller(controllerOptions: IControllerOptions = {})
 {
     return function(target: any)
     {
-        controllerOptions.injectables = (controllerOptions.injectables || []).concat(Reflect.getOwnMetadata("design:paramtypes", target));
+        controllerOptions.injectables = (controllerOptions.injectables || []).concat(Reflect.getOwnMetadata("design:paramtypes", target) || []);
 		target.metaData = target.metaData || {};
 		target.metaData.options = Object.assign(target.metaData.options, controllerOptions);
     }
