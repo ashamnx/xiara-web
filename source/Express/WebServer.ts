@@ -1,6 +1,7 @@
 import * as express from "express";
 import { IControllerOptions, IControllerRouting } from "../Controller";
 import { IRouter, IRouteDefinition } from "../Router";
+import { IResponseOptions } from "../Response";
 
 const routeFnMap = {
     ANY: "use",
@@ -108,5 +109,13 @@ export class WebServer
     createRouter(routerType: any)
     {
         let router = express.Router();
+    }
+
+    bindResponse(response, options: IResponseOptions)
+    {
+        this.App.use((req, res, next) => {
+            res[options.responseFn] = response.send.bind(response);
+            next();
+        })
     }
 };
