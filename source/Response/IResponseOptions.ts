@@ -1,6 +1,6 @@
 export interface IResponseOptions
 {
-    name?: string;
+    name: string;
 
     // Define Caching
     injectables?: any[];

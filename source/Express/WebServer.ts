@@ -114,7 +114,9 @@ export class WebServer
     bindResponse(response, options: IResponseOptions)
     {
         this.App.use((req, res, next) => {
-            res[options.responseFn] = response.send.bind(response);
+            res[options.name] = (...args:any[]) => {
+                response.send.apply(response, [req, res].concat(args));
+            }
             next();
         })
     }
