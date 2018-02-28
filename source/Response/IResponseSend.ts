@@ -1,4 +1,4 @@
 export interface IResponseSend
 {
-    send(req, res, next);
+    send(req, res, ...args: any[]);
 };
