@@ -1,0 +1,1 @@
+{"version":3,"sources":["../source/Middleware/IMiddlewareOptions.ts"],"names":[],"mappings":";;AAMC,CAAC","file":"IMiddlewareOptions.js","sourcesContent":["export interface IMiddlewareOptions\r\n{\r\n    path?: string;\r\n\r\n    // Define Caching\r\n    injectables?: any[];\r\n};"]}

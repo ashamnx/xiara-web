@@ -1,0 +1,1 @@
+{"version":3,"sources":["../source/Response/IResponseSend.ts"],"names":[],"mappings":";;AAGC,CAAC","file":"IResponseSend.js","sourcesContent":["export interface IResponseSend\r\n{\r\n    send(req, res, ...args: any[]);\r\n};"]}

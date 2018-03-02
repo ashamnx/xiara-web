@@ -1,0 +1,1 @@
+{"version":3,"sources":["../source/Controller/IController.ts"],"names":[],"mappings":";;AAIC,CAAC","file":"IController.js","sourcesContent":["import { IComponent } from \"@xiara/core\";\r\n\r\nexport interface IController extends IComponent\r\n{\r\n};"]}

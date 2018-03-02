@@ -1,0 +1,1 @@
+{"version":3,"sources":["../source/trash/Controller/IController.ts"],"names":[],"mappings":";;AAEC,CAAC","file":"IController.js","sourcesContent":["export interface IController\r\n{\r\n};"]}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../source/Response/IResponseOptions.ts"],"names":[],"mappings":";;AAMC,CAAC","file":"IResponseOptions.js","sourcesContent":["export interface IResponseOptions\r\n{\r\n    name: string;\r\n\r\n    // Define Caching\r\n    injectables?: any[];\r\n};"]}

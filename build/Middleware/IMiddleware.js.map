@@ -1,0 +1,1 @@
+{"version":3,"sources":["../source/Middleware/IMiddleware.ts"],"names":[],"mappings":";;AAOC,CAAC","file":"IMiddleware.js","sourcesContent":["import { WebServer } from \"../Express\";\r\nexport interface IMiddleware\r\n{\r\n    OnRegister?(webserver: WebServer);\r\n\r\n    // The middleware handler function\r\n    handler?(req, res, next, ...args: any[]);\r\n};"]}

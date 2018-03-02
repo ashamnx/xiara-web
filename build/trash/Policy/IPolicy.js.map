@@ -1,0 +1,1 @@
+{"version":3,"sources":["../source/trash/Policy/IPolicy.ts"],"names":[],"mappings":";;AAEC,CAAC","file":"IPolicy.js","sourcesContent":["export interface IPolicy\r\n{\r\n};"]}

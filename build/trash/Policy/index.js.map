@@ -1,0 +1,1 @@
+{"version":3,"sources":["../source/trash/Policy/index.ts"],"names":[],"mappings":";;;;;AAAA,iCAA4B","file":"index.js","sourcesContent":["export * from \"./Decorator\";\r\nexport * from \"./IPolicy\";\r\nexport * from \"./IPolicyOptions\";"]}

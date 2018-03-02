@@ -1,0 +1,1 @@
+{"version":3,"sources":["../source/trash/Middleware/IMiddlewareOptions.ts"],"names":[],"mappings":";;AAGC,CAAC","file":"IMiddlewareOptions.js","sourcesContent":["export interface IMiddlewareOptions\r\n{\r\n\r\n};"]}
