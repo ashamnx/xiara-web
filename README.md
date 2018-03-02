@@ -1,12 +1,13 @@
 # @Xiara/Web
-Express.js based Web Server Framework, toolset, decorators for Xiara applications.
+Express.js based Web Server Framework for typescript, a complete toolset, decorators for rest apis and web applications.
 
+Checkout the
+https://github.com/xiara-io/xiara-boilerplate
+for a complete Test Application
 
-## Requirements
+## Installation
 `npm install @xiara/core --save`
-
-## How to install?
-`npm install @xiara/http --save`
+`npm install @xiara/web --save`
 
 # App Structure
 ![app-strucutre](https://i.imgur.com/yYZ1tib.png)
@@ -21,14 +22,14 @@ Express.js based Web Server Framework, toolset, decorators for Xiara application
 - Service (Services)
 - Views (ejs or other template engine views)
 
-### A simple Controllers Example
+### A Controller
 
 ```typescript
-@Controller("/route")
-class TestAPIController
+@Controller({ path: "/todos" })
+class TodosController
 {
-    @GET("/getData")
-    getData(req, res)
+    @GET("/getTodos")
+    getTodos(req, res)
     {
       res.json({
         success: true
@@ -36,13 +37,11 @@ class TestAPIController
     }
 }
 ```
-The above route defines the following HTTP end point
-```GET /route/getData```
+The above route defines the following HTTP end point `GET /todos/getTodos`
 
 ### Policy
-
 ```typescript
-@Policy("Auth")
+@Policy()
 class AuthPolicy
 {
     resolve(req, res, next)
@@ -62,15 +61,17 @@ class AuthPolicy
 @Response("forbidden")
 class ForbiddenResponse
 {
-    constructor(public message: string)
+    // Dependency Injection
+    constructor(public logger: LogService)
     {
     }
     
-    send(req, res, next)
+    send(req, res, message: string)
     {
+      res.status(500);
       return res.json({
         success: false,
-        message: this.message
+        message: message
       })
     }
 }
@@ -81,5 +82,5 @@ class ForbiddenResponse
 ### License
 MIT
 
-### Quesiton? Problem? Bug?
+### Quesitons? Problems? Bugs?
 Please open an issue.
