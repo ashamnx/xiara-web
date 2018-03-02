@@ -22,6 +22,16 @@ export class WebServer
         this.App = express();
     }
 
+    use(middleware: any)
+    {
+        this.App.use(middleware);
+    }
+
+    useOnRoute(path:string, middleware: any)
+    {
+        this.App.use(path, middleware);
+    }
+
     static(path: string)
     {
         this.App.use(express.static(path));

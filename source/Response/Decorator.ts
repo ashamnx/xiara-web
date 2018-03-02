@@ -6,7 +6,7 @@ export function Response(responseOptions: IResponseOptions)
 {
     return function(target)
     {
-        responseOptions.injectables = (responseOptions.injectables || []).concat(Reflect.getOwnMetadata("design:paramtypes", target));
+        responseOptions.injectables = (responseOptions.injectables || []).concat(Reflect.getOwnMetadata("design:paramtypes", target) || []);
         target.metaData = target.metaData || {};
 		target.metaData.options = responseOptions;
     }
