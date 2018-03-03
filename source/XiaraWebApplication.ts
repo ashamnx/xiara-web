@@ -96,13 +96,6 @@ export class XiaraWebApplication extends XiaraApplication
 
     getWebServer()
     {
-        
-        //this.webserver.registerMiddlewares();
-        // webserver.registerPolicies();
-        // webserver.registerRoutes();
-        // webserver.registerCacheControl();
-        // webserver.registerControllers();
-        // webserver.registerResponses();
         return this.webserver;
     }
 };
