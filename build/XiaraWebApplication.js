@@ -82,12 +82,6 @@ var XiaraWebApplication = /** @class */ (function (_super) {
         return response;
     };
     XiaraWebApplication.prototype.getWebServer = function () {
-        //this.webserver.registerMiddlewares();
-        // webserver.registerPolicies();
-        // webserver.registerRoutes();
-        // webserver.registerCacheControl();
-        // webserver.registerControllers();
-        // webserver.registerResponses();
         return this.webserver;
     };
     return XiaraWebApplication;
