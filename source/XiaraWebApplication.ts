@@ -16,6 +16,10 @@ export class XiaraWebApplication extends XiaraApplication
     constructor()
     {
         super();
+		
+		// Register the webserver as an injectable
+		this.componentRegistry.register(WebServer);
+		this.componentRegistry.registerInjectable("WebServer", this.webserver);
     }
 
     protected createModuleManager()

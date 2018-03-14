@@ -1,1 +1,0 @@
-{"version":3,"sources":["../source/trash/Controller/Methods/GET.ts"],"names":[],"mappings":";;AAAA,aAAoB,IAAa;IAE7B,MAAM,CAAC,UAAS,MAAW,EAAE,IAAY;IAGzC,CAAC,CAAA;AACL,CAAC;AAND,kBAMC","file":"GET.js","sourcesContent":["export function Get(path?: string)\r\n{\r\n    return function(target: any, name: string)\r\n    {\r\n\r\n    }\r\n}"]}

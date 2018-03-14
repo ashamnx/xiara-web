@@ -1,1 +1,0 @@
-{"version":3,"sources":["../source/trash/Router/Decorator.ts"],"names":[],"mappings":";;AAAA,gBAAuB,UAAkB;IAErC,MAAM,CAAC,UAAS,MAAM;IAGtB,CAAC,CAAA;AACL,CAAC;AAND,wBAMC","file":"Decorator.js","sourcesContent":["export function Router(routerPath: string)\r\n{\r\n    return function(target)\r\n    {\r\n        \r\n    }\r\n}"]}

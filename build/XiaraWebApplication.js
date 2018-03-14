@@ -22,6 +22,9 @@ var XiaraWebApplication = /** @class */ (function (_super) {
         _this.Controllers = [];
         _this.Responses = [];
         _this.Middlewares = [];
+        // Register the webserver as an injectable
+        _this.componentRegistry.register(Express_1.WebServer);
+        _this.componentRegistry.registerInjectable("WebServer", _this.webserver);
         return _this;
     }
     XiaraWebApplication.prototype.createModuleManager = function () {

@@ -1,1 +1,0 @@
-{"version":3,"sources":["../source/trash/Middleware/IMiddleware.ts"],"names":[],"mappings":";;AAEC,CAAC","file":"IMiddleware.js","sourcesContent":["export interface IMiddleware\r\n{\r\n};"]}

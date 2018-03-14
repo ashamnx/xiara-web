@@ -1,1 +1,0 @@
-{"version":3,"sources":["../source/trash/Router/IRouter.ts"],"names":[],"mappings":";;AAGC,CAAC","file":"IRouter.js","sourcesContent":["export interface IRouter\r\n{\r\n\r\n};"]}

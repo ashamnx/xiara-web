@@ -1,4 +1,5 @@
 import * as express from "express";
+import { Injectable } from "@xiara/core";
 import { IControllerOptions, IControllerRouting } from "../Controller";
 import { IRouter, IRouteDefinition } from "../Router";
 import { IResponseOptions } from "../Response";
@@ -12,6 +13,7 @@ const routeFnMap = {
     PATCH: "patch"
 };
 
+@Injectable()
 export class WebServer
 {
     App: any;
@@ -19,6 +21,7 @@ export class WebServer
 
     constructor()
     {
+		console.log("Creating express app");
         this.App = express();
     }
 
